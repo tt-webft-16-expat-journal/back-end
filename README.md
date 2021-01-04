@@ -1,6 +1,6 @@
-# Ex-Pat Journal: Back End (WIP)
+# Expat Journal: Back End (WIP)
 
-The Ex-Pat Journal is a place where people from all walks of life can come together to share and experience the stories of their travels.
+The Expat Journal is a place where people from all walks of life can come together to share and experience the stories of their travels.
 
   - View the stories and photos taken by other travelers!
   - Upload stories from your own journies!
@@ -30,7 +30,7 @@ or
 $ yarn install 
 $ yarn install --dev
 ```
-## Data Types (needs updating)
+## Data Types
 
 ### Users
 | Data | Type | Required? |
@@ -48,7 +48,7 @@ $ yarn install --dev
 | user_id | integer | yes |
 
 
-## Endpoints (needs updating)
+## Endpoints
 
 The following endpoints are available through our back end:
 
