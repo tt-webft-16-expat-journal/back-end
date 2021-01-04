@@ -64,7 +64,17 @@ The following endpoints are available through our back end:
 
 | Method | Endpoint | Token Required? | Description |
 | ------ | ------ | ------ | ------ |
-| POST | `/auth/register` | no | Registers a new user. <br> Required Credentials: Username, password <br> Returns:  id, username, password. 
-| POST | `/auth/login` | no | Existing user sign in, generates a token. <br> Required Credentials: Username, password. <br> Returns: A newly generated token.
+| GET | `/users` | yes | Returns a list of users.  
+| GET | `/users/:id` | yes | Returns a single user's "profile".  
+| GET | `/users/:id/posts` | yes | Returns all posts from a single user.
+| DELETE | `/users/:id` | yes | Deletes a single existing user.
 
+#### Post Routes
 
+| Method | Endpoint | Token Required? | Description |
+| ------ | ------ | ------ | ------ |
+| GET | `/posts` | yes | Returns all posts.  
+| GET | `/posts/:id` | yes | Returns a single post from a given ID.  
+| POST | `/posts/create` | yes | Creates a new post and adds it to the database.
+| PUT | `/posts/:id` | yes | Edits an existing post.
+| DELETE | `/posts/:id` | yes | Deletes an existing post.
