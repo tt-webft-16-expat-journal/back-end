@@ -43,9 +43,8 @@ $ yarn install --dev
 | Data | Type | Required? |
 | ------ | ------ | ------ | 
 | id | integer | yes |
-| name | string | yes |
+| title | string | yes |
 | description | string | yes |
-| image | blob | no |
 | user_id | integer | yes |
 
 
