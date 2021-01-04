@@ -41,4 +41,16 @@ router.get("/:id/posts", restricted, (req, res) => {
         });
 });
 
+router.delete("/:id", restricted, (req, res) => {
+    const id = req.params.id;
+
+    Users.deleteUser(id)
+        .then((deleted) => {
+            res.status(200).json({ message: `User deleted successfully.` + deleted });
+        })
+        .catch((err) => {
+            res.status(500).json({ message: "User could not be deleted: " + err.message });
+        });
+});
+
 module.exports = router;

@@ -6,6 +6,7 @@ module.exports = {
     getBy,
     getById,
     getPostsByUser,
+    deleteUser,
 };
 
 function get() {
@@ -27,4 +28,8 @@ async function add(user) {
 
 function getPostsByUser(id) {
     return db("posts").where({ "posts.user_id": id });
+}
+
+function deleteUser(id) {
+    return db("users").where({ id }).del();
 }
