@@ -5,6 +5,7 @@ module.exports = {
     get,
     getBy,
     getById,
+    getPostsByUser,
 };
 
 function get() {
@@ -22,4 +23,8 @@ function getById(id) {
 async function add(user) {
     const [id] = await db("users").insert(user, "id");
     return getById(id);
+}
+
+function getPostsByUser(id) {
+    return db("posts").where({ "posts.user_id": id });
 }
