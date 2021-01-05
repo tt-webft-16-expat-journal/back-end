@@ -12,18 +12,19 @@ function getAllPosts() {
     return db("posts").select("id", "title", "description", "user_id").orderBy("id");
 }
 
-function getPostById() {
-
+function getPostById(id) {
+    return db("posts").where({ id }).first();
 }
 
-function createPost() {
-
+function createPost(post, id) {
+    post.user_id = id;
+    return db("posts").insert(post, "id");
 }
 
-function editPost() {
-
+function editPost(edits, id) {   
+    return db("posts").where({ id }).update(edits);
 }
 
-function deletePost() {
-    
+function deletePost(id) {
+    return db("posts").where({ id }).del();
 }
