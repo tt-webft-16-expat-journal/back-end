@@ -16,8 +16,7 @@ function getPostById(id) {
     return db("posts").where({ id }).first();
 }
 
-function createPost(post, id) {
-    post.user_id = id;
+function createPost(post) {
     return db("posts").insert(post, "id");
 }
 

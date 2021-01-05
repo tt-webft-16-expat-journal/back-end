@@ -45,7 +45,8 @@ router.put("/:id", restricted, (req, res) => {
     const edits = req.body;
     Posts.editPost(edits, id)
         .then((update) => {
-            res.status(204).json(update);
+            res.status(204).json({ message: "Specified post updated."});
+            update;
         })
         .catch((err) => {
             res.status(500).json({ message: err.message });
